@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D9DB0FAD2F8437FB746E95B /* lara/fonts in Resources */ = {isa = PBXBuildFile; fileRef = 73DC188A88C046E980B4B724 /* lara/fonts */; };
-		8F5C1F9A2D6A4E9D9F4B1A21 /* lara/kexploit/darksword.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5C1F9B2D6A4E9D9F4B1A21 /* lara/kexploit/darksword.m */; };
 		9F4A1D2D3C4E567890123456 /* lara/lib/libxpf.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4A1D2E3C4E567890123456 /* lara/lib/libxpf.dylib */; };
 		9F4A1D2F3C4E567890123456 /* lara/lib/libxpf.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4A1D2E3C4E567890123456 /* lara/lib/libxpf.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F4A1D403C4E567890123456 /* lara/lib/libgrabkernel2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F4A1D413C4E567890123456 /* lara/lib/libgrabkernel2.dylib */; };
@@ -182,7 +181,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F5C1F9A2D6A4E9D9F4B1A21 /* lara/kexploit/darksword.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
