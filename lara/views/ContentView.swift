@@ -67,7 +67,7 @@ struct ContentView: View {
                         HStack {
                             Text("kernproc:")
                             Spacer()
-                            Text(String(format: "0x%llx", getrootvnode()))
+                            Text(String(format: "0x%llx", getkernproc()))
                                 .font(.system(.body, design: .monospaced))
                                 .foregroundColor(.secondary)
                         }
@@ -75,7 +75,7 @@ struct ContentView: View {
                         HStack {
                             Text("rootvnode:")
                             Spacer()
-                            Text(String(format: "0x%llx", getkernproc()))
+                            Text(String(format: "0x%llx", getrootvnode()))
                                 .font(.system(.body, design: .monospaced))
                                 .foregroundColor(.secondary)
                         }
@@ -145,7 +145,7 @@ struct ContentView: View {
                                 FontPicker(mgr: mgr)
                             }
                             
-                            NavigationLink("DirtyZero (Broken)") {
+                            NavigationLink("DirtyZero") {
                                 ZeroView(mgr: mgr)
                             }
 

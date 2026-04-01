@@ -86,7 +86,7 @@ struct ZeroView: View {
                         }
                     }
                 } footer: {
-                    Text("Big thanks [jailbreak.party](https://github.com/jailbreakdotparty/dirtyZero)!\nNOTE: A lot of Tweaks currently dont work. This will probably be fixed in a future update.")
+                    Text("Big thanks [jailbreak.party](https://github.com/jailbreakdotparty/dirtyZero)!")
                 }
             }
             .navigationTitle("DirtyZero")
