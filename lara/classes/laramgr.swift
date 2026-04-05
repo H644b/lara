@@ -306,4 +306,17 @@ final class laramgr: ObservableObject {
         self.logmsg("(vfs) zeroed first page of \(path)")
         return true
     }
+    
+    func sbxgettoken(path: String) -> String? {
+        guard let cstr = sbx_gettoken(path) else { return nil }
+        let str = String(cString: cstr)
+        free(cstr)
+        return str
+    }
+    
+    func sbxelevate() {
+        DispatchQueue.main.async {
+            sbx_elevate();
+        }
+    }
 }

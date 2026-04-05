@@ -34,6 +34,7 @@
 		9F4A1D2E3C4E567890123456 /* lara/lib/libxpf.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = lara/lib/libxpf.dylib; sourceTree = "<group>"; };
 		9F4A1D413C4E567890123456 /* lara/lib/libgrabkernel2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = lara/lib/libgrabkernel2.dylib; sourceTree = "<group>"; };
 		CC1C8B392F71DF9C00206982 /* lara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lara.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6842DF2F8311C300B08EB0 /* libSystem.B.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.B.tbd; path = usr/lib/libSystem.B.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -78,6 +79,7 @@
 				CC1C8B3B2F71DF9C00206982 /* lara */,
 				CC1C8B3A2F71DF9C00206982 /* Products */,
 				CC1C8B822F72C8E000206982 /* Recovered References */,
+				CC6842DE2F8311C300B08EB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +99,14 @@
 				9F4A1D413C4E567890123456 /* lara/lib/libgrabkernel2.dylib */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CC6842DE2F8311C300B08EB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC6842DF2F8311C300B08EB0 /* libSystem.B.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +351,7 @@
 					"$(PROJECT_DIR)/lara/lib",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roooot.laraapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -388,6 +399,7 @@
 					"$(PROJECT_DIR)/lara/lib",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roooot.laraapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

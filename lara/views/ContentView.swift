@@ -11,8 +11,6 @@ import UniformTypeIdentifiers
 struct ContentView: View {
     @AppStorage("showfmintabs") private var showfmintabs: Bool = true
     @ObservedObject private var mgr = laramgr.shared
-    @State private var uid: uid_t = getuid()
-    @State private var pid: pid_t = getpid()
     @State private var hasoffsets = haskernproc()
     @State private var showsettings = false
     @State private var selectedmethod: method = .sbx
@@ -106,7 +104,7 @@ struct ContentView: View {
                         }
                     }
 
-                    Section(selectedmethod == .vfs ? "Virtual File System" : "Sandbox Escape") {
+                    Section {
                         if selectedmethod == .vfs {
                             Button {
                                 mgr.vfsinit()
@@ -141,20 +139,20 @@ struct ContentView: View {
                                 }
                             }
                             .disabled(!mgr.dsready || mgr.vfsready || mgr.vfsrunning)
-
+                            
                             if mgr.vfsready {
                                 NavigationLink("Font Overwrite") {
                                     FontPicker(mgr: mgr)
                                 }
-
+                                
                                 NavigationLink("Custom Overwrite") {
                                     CustomOverwriteView(mgr: mgr)
                                 }
-
+                                
                                 NavigationLink("DirtyZero (Broken)") {
                                     ZeroView(mgr: mgr)
                                 }
-
+                                
                                 if !showfmintabs {
                                     NavigationLink("File Manager") {
                                         SantanderView(startPath: "/")
@@ -164,6 +162,7 @@ struct ContentView: View {
                         } else {
                             Button {
                                 mgr.sbxescape()
+                                // mgr.sbxelevate()
                             } label: {
                                 if mgr.sbxrunning {
                                     HStack {
@@ -193,7 +192,7 @@ struct ContentView: View {
                                 }
                             }
                             .disabled(!mgr.dsready || mgr.sbxready || mgr.sbxrunning)
-
+                            
                             if mgr.sbxready {
                                 if !showfmintabs {
                                     NavigationLink("File Manager") {
@@ -220,44 +219,19 @@ struct ContentView: View {
                                 }
                             }
                         }
-
-                        HStack {
-                            Text("UID:")
-
-                            Spacer()
-
-                            Text("\(uid)")
-                                .font(.system(.body, design: .monospaced))
-                                .foregroundColor(.secondary)
-
-                            Button {
-                                uid = getuid()
-                                print(uid)
-                            } label: {
-                                Image(systemName: "arrow.clockwise")
-                            }
-                        }
-
-                        HStack {
-                            Text("PID:")
-
-                            Spacer()
-
-                            Text("\(pid)")
-                                .font(.system(.body, design: .monospaced))
-                                .foregroundColor(.secondary)
-
-                            Button {
-                                pid = getpid()
-                                print(pid)
-                            } label: {
-                                Image(systemName: "arrow.clockwise")
-                            }
+                    } header: {
+                        Text(selectedmethod == .vfs ? "Virtual File System" : "Sandbox Escape")
+                    } footer: {
+                        if selectedmethod == .sbx {
+                            Text("Font Overwrite is only available in VFS mode. (Settings -> Method -> VFS)")
                         }
                     }
+                    
                     Section {
-                        NavigationLink("Tools") {
-                            ToolsView()
+                        if mgr.dsready {
+                            NavigationLink("Tools") {
+                                ToolsView()
+                            }
                         }
                         
                         if #unavailable(iOS 18.2) {

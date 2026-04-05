@@ -50,7 +50,7 @@ struct lara: App {
                 if fmReady && showfmintabs {
                     SantanderView(startPath: "/")
                         .tabItem {
-                            Image(systemName: "document.badge.gearshape.fill")
+                            Image(systemName: "folder.fill")
                         }
                         .tag(0)
                 }
@@ -63,7 +63,7 @@ struct lara: App {
 
                 LogsView(logger: globallogger)
                     .tabItem {
-                        Image(systemName: "text.document.fill")
+                        Image(systemName: "doc.text.fill")
                     }
                     .tag(2)
             }
